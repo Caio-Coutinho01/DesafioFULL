@@ -1,4 +1,5 @@
-﻿using Gta.Data.Mappings;
+﻿using Gta.Data.Extensions;
+using Gta.Data.Mappings;
 using Gta.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,9 +19,12 @@ namespace Gta.Data.Context
 
         #endregion
 
-        protected  void onModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
+
+            modelBuilder.SeedData();
+            
             base.OnModelCreating(modelBuilder);
         }
     }

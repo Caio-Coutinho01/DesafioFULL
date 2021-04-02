@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\" />
-    <Folder Include="interfaces\" />
-    <Folder Include="Models\" />
+    <Compile Remove="Models\interfaces\**" />
+    <Compile Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="Models\interfaces\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="Models\interfaces\**" />
+    <None Remove="NovaPasta\**" />
   </ItemGroup>
 
 </Project>

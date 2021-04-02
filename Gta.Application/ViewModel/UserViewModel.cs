@@ -1,15 +1,14 @@
-﻿using Gta.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gta.Domain.Entity
+namespace Gta.Application.ViewModel
 {
-    public class User:Entidades
+   public class UserViewModel
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-
 
     }
 }

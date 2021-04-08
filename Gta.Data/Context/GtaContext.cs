@@ -16,6 +16,7 @@ namespace Gta.Data.Context
         #region "DbSets"
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Parcel> Parcels { get; set; }
 
         #endregion
 
@@ -23,8 +24,10 @@ namespace Gta.Data.Context
         {
             modelBuilder.ApplyConfiguration(new UserMap());
 
+            modelBuilder.ApplyGlobalConfigurations();
+
             modelBuilder.SeedData();
-            
+
             base.OnModelCreating(modelBuilder);
         }
     }

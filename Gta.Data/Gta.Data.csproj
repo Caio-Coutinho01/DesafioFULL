@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gta.Application\Gta.Application.csproj" />
     <ProjectReference Include="..\Gta.Domain\Gta.Domain.csproj" />
   </ItemGroup>
 

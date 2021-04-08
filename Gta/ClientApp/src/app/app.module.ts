@@ -1,34 +1,54 @@
+
+import { NavMenuProjectComponent } from './nav-menu-project/nav-menu-project.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule,LOCALE_ID} from '@angular/core';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { UsersComponent } from './users/users.component';
+import { UserDataService } from './_data-services/user.data-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule,MatButtonModule,MatSidenavModule,MatIconModule
+  ,MatListModule,MatInputModule,MatFormFieldModule,MatCardModule, MatDatepickerModule, MatTableModule } from '@angular/material';
+  import { MatNativeDateModule } from '@angular/material/core';
+  import localePt from '@angular/common/locales/pt';
+  import {registerLocaleData} from '@angular/common';
+  import { NgxMaskModule,IConfig } from 'ngx-mask'
 
+  registerLocaleData(localePt)
+  export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+ 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    UsersComponent,
+    NavMenuProjectComponent
   ],
+  
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-    ])
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    ReactiveFormsModule ,
+    NgxMaskModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [UserDataService,{
+    provide:LOCALE_ID,
+    useValue:'pt-BR',
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

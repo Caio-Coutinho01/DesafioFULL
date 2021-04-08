@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Gta.Data.Context;
 using Gta.IoC;
+using Gta.Application.AutoMapper;
 
 namespace Gta
 {
@@ -27,6 +28,9 @@ namespace Gta
 
             services.AddDbContext<GtaContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("GtaDB")).EnableSensitiveDataLogging());
             NativeInjector.RegisterService(services);
+
+            services.AddAutoMapper(typeof(AutoMapperSetup));
+            
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -4,14 +4,16 @@ using Gta.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Gta.Data.Migrations
 {
     [DbContext(typeof(GtaContext))]
-    partial class GtaContextModelSnapshot : ModelSnapshot
+    [Migration("20210408042748_alter colum")]
+    partial class altercolum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,7 @@ namespace Gta.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 4, 8, 4, 34, 9, 275, DateTimeKind.Local).AddTicks(542));
+                        .HasDefaultValue(new DateTime(2021, 4, 8, 1, 27, 47, 911, DateTimeKind.Local).AddTicks(4285));
 
                     b.Property<DateTime>("DateDue")
                         .HasColumnType("datetime2");
@@ -54,9 +56,6 @@ namespace Gta.Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<int>("NumParcel")
-                        .HasColumnType("int");
-
                     b.Property<float>("VlrParcel")
                         .HasColumnType("real");
 
@@ -75,7 +74,6 @@ namespace Gta.Data.Migrations
                             Fine = 1f,
                             IdUser = 1,
                             IsDeleted = false,
-                            NumParcel = 0,
                             VlrParcel = 300f
                         });
                 });
@@ -94,7 +92,7 @@ namespace Gta.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 4, 8, 4, 34, 9, 288, DateTimeKind.Local).AddTicks(7764));
+                        .HasDefaultValue(new DateTime(2021, 4, 8, 1, 27, 47, 924, DateTimeKind.Local).AddTicks(2543));
 
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");

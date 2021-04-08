@@ -238,6 +238,37 @@ namespace Gta.Data.Repositories
                 throw;
             }
         }
+
+        //public List<IMainModel> Query()
+        //{
+        //    try
+        //    {
+        //        List<IMainModel> _retorno;
+        //        var db = _context;
+        //        _retorno = (from par in db.Parcels
+        //                    join user in db.Users on par.IdUser equals user.Id
+        //                    where par.IdUser == user.Id
+        //                    select new IMainModel
+        //                    {
+        //                        Id = user.Id,
+        //                        CPF = user.CPF,
+        //                        DateCreated = user.DateCreated,
+        //                        Name = user.Name,
+        //                        TitleNumber = user.TitleNumber,
+        //                        VlrParcel = par.VlrParcel,
+        //                        DateDue = par.DateDue,
+        //                        Fees = par.Fees,
+        //                        Fine = par.Fine
+        //                    }).ToList();
+
+        //        return _retorno;
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
         //Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include
         public IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, object> includes)
         {

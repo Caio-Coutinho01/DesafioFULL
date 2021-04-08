@@ -4,14 +4,16 @@ using Gta.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Gta.Data.Migrations
 {
     [DbContext(typeof(GtaContext))]
-    partial class GtaContextModelSnapshot : ModelSnapshot
+    [Migration("20210407191458_First Migration")]
+    partial class FirstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,7 @@ namespace Gta.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 4, 8, 4, 34, 9, 275, DateTimeKind.Local).AddTicks(542));
+                        .HasDefaultValue(new DateTime(2021, 4, 7, 16, 14, 57, 723, DateTimeKind.Local).AddTicks(7076));
 
                     b.Property<DateTime>("DateDue")
                         .HasColumnType("datetime2");
@@ -40,11 +42,11 @@ namespace Gta.Data.Migrations
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");
 
-                    b.Property<float>("Fees")
-                        .HasColumnType("real");
+                    b.Property<int>("Fees")
+                        .HasColumnType("int");
 
-                    b.Property<float>("Fine")
-                        .HasColumnType("real");
+                    b.Property<int>("Fine")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdUser")
                         .HasColumnType("int");
@@ -53,9 +55,6 @@ namespace Gta.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
-
-                    b.Property<int>("NumParcel")
-                        .HasColumnType("int");
 
                     b.Property<float>("VlrParcel")
                         .HasColumnType("real");
@@ -71,11 +70,10 @@ namespace Gta.Data.Migrations
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(2012),
                             DateDue = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(2012),
                             DateIssue = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(2011),
-                            Fees = 1f,
-                            Fine = 1f,
+                            Fees = 1,
+                            Fine = 1,
                             IdUser = 1,
                             IsDeleted = false,
-                            NumParcel = 0,
                             VlrParcel = 300f
                         });
                 });
@@ -94,7 +92,7 @@ namespace Gta.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 4, 8, 4, 34, 9, 288, DateTimeKind.Local).AddTicks(7764));
+                        .HasDefaultValue(new DateTime(2021, 4, 7, 16, 14, 57, 736, DateTimeKind.Local).AddTicks(2067));
 
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");

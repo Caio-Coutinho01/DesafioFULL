@@ -18,6 +18,7 @@ namespace Gta.IoC
             #region Repositories
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IParcelRepository, ParcelRepository>();
 
             #endregion
 

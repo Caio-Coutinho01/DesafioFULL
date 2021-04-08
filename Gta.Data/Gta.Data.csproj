@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Gta.Domain\Gta.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
